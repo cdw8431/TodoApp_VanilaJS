@@ -2,17 +2,24 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./style.css">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h2>to-do-app</h2>
-        <div class="todo_container">
-            <ul class="todo_list">
-            </ul>
+        <div class="container">
+            <div class="wrap">
+                <div class="title_wrap">
+                    <h2 class="title">투두리스트</h2>
+                </div>
+                <div class="todo_wrap">
+                    <ul class="todo_list">
+                    </ul>
+                </div>
+                <form class="form">
+                    <input type="text" placeholder="할일을 입력하세요" class="todo_input">
+                    <button type="submit" class="todo_add">추가</button>
+                </form>
+            </div>
         </div>
-        <form>
-            <input type="text" placeholder="할일을 입력하세요" class="todo_input">
-            <button type="submit">추가</button>
-        </form>
     </body>
     <script src="./toDo.js"></script>
 </html>

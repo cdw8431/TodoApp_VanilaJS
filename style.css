@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR';
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.title_wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-size: 32px;
+}
+
+.todo_wrap {
+    margin-top: 24px;
+    padding: 24px;
+    background-color: #F6F6F6;
+    border: 1px solid #E6E6E6;
+    border-radius: 8px;
+    width: 440px;
+    height: 500px;
+    overflow: auto;
+}
+
+.todo_list {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.todo_list li {
+    margin-top: 16px;
+    display: flex;
+    align-content: center;
+    list-style: none;
+}
+
+.todo_list li button.edit {
+    box-shadow: 0 0 5px rgba(72, 40, 255, 0.2);
+    background-color: #EFEEFF;
+    color: #4035D3;
+    border-radius: 8px;
+    margin-left: 6px;
+    border: none;
+    outline: none;
+    width: 60px;
+    height: 40px;
+}
+
+.todo_list li button.edit:hover {
+    background-color: #E8E6FF;
+    cursor: pointer;
+}
+
+.todo_list li button.remove {
+    box-shadow: 0 0 8px rgba(255, 66, 91, 0.15);
+    background-color: #FFF6F6;
+    color: #E12121;
+    border-radius: 8px;
+    margin-left: 6px;
+    border: none;
+    outline: none;
+    width: 50px;
+    height: 40px;
+}
+
+.todo_list li button.remove:hover {
+    background-color: #ffecec;
+    cursor: pointer;
+}
+
+.todo_list li input {
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    border: 1px solid #E6E6E6;
+    font-size: 16px;
+    outline: none;
+    padding-left: 12px;
+    width: 300px;
+    height: 40px
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    height: 60px;
+}
+
+.form input {
+    border-radius: 8px;
+    background-color: #F6F6F6;
+    border: 1px solid #E6E6E6;
+    font-size: 16px;
+    outline: none;
+    padding-left: 12px;
+    width: 400px;
+    height: 48px;
+}
+
+.form button {
+    border-radius: 8px;
+    background-color: #4035D3;
+    margin-left: 6px;
+    font-size: 16px;
+    color: #FFFFFF;
+    border: 0px;
+    outline: none;
+    width: 80px;
+    height: 48px;
+}
+
+.form button:hover {
+    background-color: #3A30BE;
+    cursor: pointer;
+}

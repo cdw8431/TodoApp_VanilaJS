@@ -12,14 +12,16 @@ const addTodo = (input) => {
     todoEditButton = document.createElement('button')
     todoContent.readOnly = true
     todoContent.value = input.value
-    todoRemoveButton.innerText = "X"
+    todoRemoveButton.innerText = "✖"
     todoRemoveButton.addEventListener("click", removeTodo)
+    todoRemoveButton.classList.add('remove')
     todoEditButton.innerText = "편집"
+    todoEditButton.classList.add('edit')
     todoEditButton.addEventListener("click", () => {
         readOnlyState = (todoContent.readOnly === true)
         todoContent.readOnly = readOnlyState ? false : true
     })
-    todo.append(todoRemoveButton, todoEditButton, todoContent)
+    todo.append(todoContent, todoEditButton, todoRemoveButton)
     document.querySelector(".todo_list").appendChild(todo)
 }
 

@@ -1,5 +1,14 @@
 
 
+const changeCheckState = (e, todoContent) => {
+    if (e.target.checked === true) {
+        todoContent.readOnly = true
+        todoContent.classList.add('todo_check')
+    } else {
+        todoContent.classList.remove('todo_check')
+    }
+}
+
 const removeTodo = (e) => {
     todo = e.target.parentNode
     document.querySelector(".todo_list").removeChild(todo)
@@ -7,11 +16,22 @@ const removeTodo = (e) => {
 
 const addTodo = (input) => {
     const todo = document.createElement('li'),
+    todoCheckBox = document.createElement('input'),
     todoContent = document.createElement('input'),
     todoRemoveButton = document.createElement('button'),
     todoEditButton = document.createElement('button')
+    todoCheckBox.type = "checkbox"
+    todoCheckBox.classList.add('check')
+    todoCheckBox.addEventListener("click", (e) => {
+        changeCheckState(e, todoContent)
+    })
     todoContent.readOnly = true
     todoContent.value = input.value
+    todoContent.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter')
+        readOnlyState = (todoContent.readOnly === true)
+        todoContent.readOnly = readOnlyState ? false : true
+    })
     todoRemoveButton.innerText = "✖"
     todoRemoveButton.addEventListener("click", removeTodo)
     todoRemoveButton.classList.add('remove')
@@ -20,9 +40,10 @@ const addTodo = (input) => {
     todoEditButton.addEventListener("click", () => {
         readOnlyState = (todoContent.readOnly === true)
         todoContent.readOnly = readOnlyState ? false : true
+        todoContent.focus()
     })
-    todo.append(todoContent, todoEditButton, todoRemoveButton)
-    document.querySelector(".todo_list").appendChild(todo)
+    todo.append(todoCheckBox, todoContent, todoEditButton, todoRemoveButton)
+    document.querySelector(".todo_list").prepend(todo)
 }
 
 const onSubmit = (e) => {
@@ -31,6 +52,7 @@ const onSubmit = (e) => {
     if (input.value !== "") {
         addTodo(input)
         input.value = ""
+        input.focus()
     } 
 }
 

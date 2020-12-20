@@ -1,4 +1,4 @@
-# to-do-app-js
+# TodoApp_VanilaJS
 
 ![to-do-list-ui](https://user-images.githubusercontent.com/36909737/102635969-64af2880-4197-11eb-8542-a9eb795c0ccc.png)
 
